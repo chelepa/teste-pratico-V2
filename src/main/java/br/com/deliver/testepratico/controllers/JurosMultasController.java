@@ -27,7 +27,8 @@ public class JurosMultasController {
 	
     @PostMapping(value = "/v1/JurosMultas")
     public ResponseEntity<JurosMultasResponseDTO> createRole(@RequestBody @Valid JurosMultasRequestDTO request) {
-    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
+    	JurosMultasResponseDTO response = testePraticoServiceImpl.create(request);
+    	return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     
     @GetMapping(value = "/v1/JurosMultas")

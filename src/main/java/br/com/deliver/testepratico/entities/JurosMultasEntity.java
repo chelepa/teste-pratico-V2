@@ -3,7 +3,6 @@ package br.com.deliver.testepratico.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,11 +10,11 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "JUROS_MULTAS")
+@Table(name = "juros_multas")
 public class JurosMultasEntity {
 	
-	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	@Id
+	@GeneratedValue
 	@Column(name = "ID")
 	private Integer id;
 	

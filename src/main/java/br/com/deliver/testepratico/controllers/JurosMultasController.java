@@ -26,27 +26,27 @@ public class JurosMultasController {
 	private TestePraticoServiceImpl testePraticoServiceImpl;
 	
     @PostMapping(value = "/v1/JurosMultas")
-    public ResponseEntity<JurosMultasResponseDTO> createRole(@RequestBody @Valid JurosMultasRequestDTO request) {
+    public ResponseEntity<JurosMultasResponseDTO> createJurosMultas(@RequestBody @Valid JurosMultasRequestDTO request) {
     	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
     }
     
     @GetMapping(value = "/v1/JurosMultas")
-    public ResponseEntity<List<JurosMultasResponseDTO>> queryAllInterest() {
+    public ResponseEntity<List<JurosMultasResponseDTO>> queryAllJurosMultas() {
     	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getAllJurosMultas());
     }
     
     @GetMapping(value = "/v1/JurosMultas/{id}")
-    public ResponseEntity<JurosMultasResponseDTO> queryInterestId(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<JurosMultasResponseDTO> queryJurosMultasId(@PathVariable(value = "id") Integer id) {
     	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getJurosMultasToID(id));
     }
     
     @DeleteMapping(value = "/v1/JurosMultas/{id}")
-    public ResponseEntity<Void> deleteInterestId(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<Void> deleteJurosMultasId(@PathVariable(value = "id") Integer id) {
 		return testePraticoServiceImpl.deleteJurosMultasToId(id);
     }
     
     @PutMapping(value = "/v1/JurosMultas/{id}")
-    public ResponseEntity<JurosMultasResponseDTO> updateInterestId(@PathVariable(value = "id") Integer id, @RequestBody JurosMultasResponseDTO request) {
+    public ResponseEntity<JurosMultasResponseDTO> updateJurosMultasId(@PathVariable(value = "id") Integer id, @RequestBody JurosMultasResponseDTO request) {
     	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.updateJurosMultas(id, request));
     }
 }

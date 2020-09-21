@@ -42,7 +42,7 @@ public class TestePraticoServiceImplTest {
     	JurosMultasResponseDTO response = testePraticoServiceImpl.create(TestePraticoBuilder.mockJurosMultasRequest());
         Assert.assertEquals(ID, response.getId());
     }
-    
+    	
     @Test
     public void ShouldReturnListJurosMultasResponse_When_getAllJurosMultas() throws IOException {
     	when(interestService.getAllJurosMultas()).thenReturn(TestePraticoBuilder.mockListJurosMultasRequest());

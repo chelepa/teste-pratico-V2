@@ -15,7 +15,7 @@ import br.com.deliver.testepratico.dto.Contas.ContasPagamentoRequestDTO;
 import br.com.deliver.testepratico.dto.Contas.ContasPagamentoResponseDTO;
 import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasResponseDTO;
 import br.com.deliver.testepratico.entities.ContasEntity;
-import br.com.deliver.testepratico.exceptions.JurosMultasNotFoundException;
+import br.com.deliver.testepratico.exceptions.ContaNotFoundException;
 import br.com.deliver.testepratico.repositories.ContasRepository;
 import br.com.deliver.testepratico.services.JurosMultas.JurosMultasService;
 import lombok.extern.slf4j.Slf4j;
@@ -78,17 +78,32 @@ public class ContasService {
 	}
 	
 	public ResponseEntity<Void> deletePaymentToID(Integer id) {
-		log.info("InterestService.deletePaymentToID - Start - ID: {}", id);
+		log.info("ContasService.deletePaymentToID - Start - ID: {}", id);
 		
 		ContasEntity response =  getContasEntity(id);
 		
 		contasRepository.delete(response);
 		
-		log.info("InterestService.deletePaymentToID - End - ContasEntity: {}", response);
+		log.info("ContasService.deletePaymentToID - End - ContasEntity: {}", response);
 		
-		log.info("InterestService.deletePaymentToID - End - id: {}", id);
+		log.info("ContasService.deletePaymentToID - End - id: {}", id);
 		
 		return ResponseEntity.noContent().build();
+	}
+	
+	public ContasPagamentoResponseDTO updateContasPagamento(Integer id, ContasPagamentoRequestDTO request) {
+//		log.info("ContasService.updateContasPagamento - Start - ID: {}, ContasPagamentoRequestDTO: {}", id, request);
+//		
+//		ContasEntity contasEntity = getContasEntity(id);
+//		
+//		ContasPagamentoResponseDTO response = converterItemEntityTOItemDTO(contasEntity);
+//		
+//		request.setId(id);
+//		
+//		Integer DiasAtrasados =  TotalDeDiasAtrasados(request.getPaymentDate(), request.getDueDate());
+		
+//		log.info("ContasService.updateContasPagamento - End - ContasEntity: {}", response);
+		return null;
 	}
 	
 	private ContasPagamentoResponseDTO converterItemEntityTOItemDTO(ContasEntity contasEntity) {
@@ -172,7 +187,7 @@ public class ContasService {
 		try {
 			return contasRepository.findById(id).get();
 		} catch (Exception ex) {
-			throw new JurosMultasNotFoundException("JurosMultas não encontrado");
+			throw new ContaNotFoundException("Conta não encontrada");
 		}
 	}
 }

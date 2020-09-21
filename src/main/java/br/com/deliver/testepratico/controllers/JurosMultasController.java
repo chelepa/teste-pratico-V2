@@ -46,7 +46,7 @@ public class JurosMultasController {
     }
     
     @PutMapping(value = "/v1/JurosMultas/{id}")
-    public ResponseEntity<JurosMultasResponseDTO> updateInterestId(@PathVariable(value = "id") Integer id,@RequestBody JurosMultasResponseDTO request) {
+    public ResponseEntity<JurosMultasResponseDTO> updateInterestId(@PathVariable(value = "id") Integer id, @RequestBody JurosMultasResponseDTO request) {
     	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.updateJurosMultas(id, request));
     }
 }

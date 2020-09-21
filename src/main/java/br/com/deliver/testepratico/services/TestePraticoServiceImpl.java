@@ -66,4 +66,9 @@ public class TestePraticoServiceImpl implements TestePraticoService {
 	public ResponseEntity<Void> deletePaymentToId(Integer id) {
 		return contasService.deletePaymentToID(id);
 	}
+
+	@Override
+	public ContasPagamentoResponseDTO updateContasPagamento(Integer id,	ContasPagamentoRequestDTO contasPagamentoRequestDTO) {
+		return contasService.updateContasPagamento(id, contasPagamentoRequestDTO);
+	}
 }

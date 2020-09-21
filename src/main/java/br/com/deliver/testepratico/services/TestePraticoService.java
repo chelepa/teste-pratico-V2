@@ -29,4 +29,6 @@ public interface TestePraticoService {
 	
 	ResponseEntity<Void> deletePaymentToId(Integer id);
 	
+	ContasPagamentoResponseDTO updateContasPagamento(Integer id, ContasPagamentoRequestDTO contasPagamentoRequestDTO);
+	
 }

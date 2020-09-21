@@ -2,6 +2,8 @@ package br.com.deliver.testepratico.dto.Contas;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -17,5 +19,6 @@ public class ContasPagamentoResponseDTO {
 	
 	private Integer daysDelay;
 	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate paymentDate;
 }

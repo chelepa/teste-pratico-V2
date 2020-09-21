@@ -1,7 +1,8 @@
 package br.com.deliver.testepratico.constants;
 
 public enum ErrorCodes {
-	JUROS_MULTAS_NOT_FOUND("JurosMultas not found");
+	JUROS_MULTAS_NOT_FOUND("JurosMultas not found"),
+	CONTA_NOT_FOUND("Conta not found");
 
 	private final String message;
 

@@ -1,4 +1,4 @@
-package br.com.deliver.testepratico.dto;
+package br.com.deliver.testepratico.dto.JurosMultas;
 
 import com.sun.istack.NotNull;
 import lombok.Data;

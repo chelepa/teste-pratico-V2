@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.deliver.testepratico.dto.JurosMultasRequestDTO;
-import br.com.deliver.testepratico.dto.JurosMultasResponseDTO;
+import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasRequestDTO;
+import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasResponseDTO;
 import br.com.deliver.testepratico.services.TestePraticoServiceImpl;
 
 @RestController
@@ -27,8 +27,7 @@ public class JurosMultasController {
 	
     @PostMapping(value = "/v1/JurosMultas")
     public ResponseEntity<JurosMultasResponseDTO> createRole(@RequestBody @Valid JurosMultasRequestDTO request) {
-    	JurosMultasResponseDTO response = testePraticoServiceImpl.create(request);
-    	return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
     }
     
     @GetMapping(value = "/v1/JurosMultas")

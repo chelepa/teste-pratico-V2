@@ -1,11 +1,10 @@
 package br.com.deliver.testepratico.entities;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,8 +15,8 @@ import lombok.Data;
 @Table(name = "contas")
 public class ContasEntity {
 
-	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	@Id
+	@GeneratedValue
 	@Column(name = "ID")
 	private Integer id;
 	
@@ -34,5 +33,5 @@ public class ContasEntity {
 	private Integer daysDelay;
 	
 	@Column(name = "PAYMENT_DATE")
-	private ZonedDateTime paymentDate;
+	private LocalDate paymentDate;
 }

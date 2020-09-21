@@ -2,14 +2,15 @@ package br.com.deliver.testepratico.services.JurosMultas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.deliver.testepratico.dto.JurosMultasRequestDTO;
-import br.com.deliver.testepratico.dto.JurosMultasResponseDTO;
+import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasRequestDTO;
+import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasResponseDTO;
 import br.com.deliver.testepratico.entities.JurosMultasEntity;
 import br.com.deliver.testepratico.exceptions.JurosMultasNotFoundException;
 import br.com.deliver.testepratico.repositories.JurosMultasRepository;
@@ -45,7 +46,7 @@ public class JurosMultasService {
 		
 		List<JurosMultasResponseDTO> response = new ArrayList<>();
 		
-		repository.findAll().forEach(iteEntity -> response.add(converterItemEntityTOItemDTO(iteEntity)));
+		repository.findAll().forEach(itemEntity -> response.add(converterItemEntityTOItemDTO(itemEntity)));
 		
 		log.info("InterestService.createJurosMultas - End - response: {}", response);
 		
@@ -93,11 +94,21 @@ public class JurosMultasService {
 		return response;
 	}
 	
+	public JurosMultasResponseDTO getJurosMultasDaysDelay(String daysDelay) {
+		log.info("InterestService.getJurosMultasDaysDelay - Start - ID: {}", daysDelay);
+
+		Optional<JurosMultasEntity> jurosMultasEntity = repository.findByDaysDelay(daysDelay);
+		
+		JurosMultasResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity.get());
+		
+		log.info("InterestService.getJurosMultasDaysDelay - End - JurosMultasResponseDTO: {}", response);
+		return response;
+	}
+	
 	private JurosMultasEntity jurosMultasId(Integer id) {
 		try {
 			return repository.findById(id).get();
 		} catch (Exception ex) {
-//			log.error("InterestService.jurosMultasId - Error: {}", ex);
 			throw new JurosMultasNotFoundException("JurosMultas não encontrado");
 		}
 	}

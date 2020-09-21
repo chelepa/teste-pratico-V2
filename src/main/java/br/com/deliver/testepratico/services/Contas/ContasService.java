@@ -43,12 +43,12 @@ public class ContasService {
 		Double novoValor = Valorajustado(DiasAtrasados, request);		
 				
 		ContasEntity resp = modelMapper.map(populatePayload(request, DiasAtrasados, novoValor), ContasEntity.class);
-		
+
 		contasRepository.save(resp);
 		
 		ContasPagamentoResponseDTO contasPagamentoResponse = modelMapper.map(resp, ContasPagamentoResponseDTO.class);
 		
-		log.info("ContasService.createPayment - End - request: {}", contasPagamentoResponse);
+		log.info("ContasService.createPayment - End - ContasPagamentoResponse: {}", contasPagamentoResponse);
 		
 		return contasPagamentoResponse;
 	}

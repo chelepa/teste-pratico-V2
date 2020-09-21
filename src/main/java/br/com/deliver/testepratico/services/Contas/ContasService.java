@@ -92,18 +92,28 @@ public class ContasService {
 	}
 	
 	public ContasPagamentoResponseDTO updateContasPagamento(Integer id, ContasPagamentoRequestDTO request) {
-//		log.info("ContasService.updateContasPagamento - Start - ID: {}, ContasPagamentoRequestDTO: {}", id, request);
-//		
-//		ContasEntity contasEntity = getContasEntity(id);
-//		
-//		ContasPagamentoResponseDTO response = converterItemEntityTOItemDTO(contasEntity);
-//		
-//		request.setId(id);
-//		
-//		Integer DiasAtrasados =  TotalDeDiasAtrasados(request.getPaymentDate(), request.getDueDate());
+		log.info("ContasService.updateContasPagamento - Start - ID: {}, ContasPagamentoRequestDTO: {}", id, request);
 		
-//		log.info("ContasService.updateContasPagamento - End - ContasEntity: {}", response);
-		return null;
+		Integer DiasAtrasados =  TotalDeDiasAtrasados(request.getPaymentDate(), request.getDueDate());
+		
+		Double novoValor = Valorajustado(DiasAtrasados, request);
+		
+		ContasEntity contasEntity = getContasEntity(id);
+
+		ContasPagamentoResponseDTO contasPagamentoResponse = modelMapper.map(contasEntity, ContasPagamentoResponseDTO.class);
+		contasPagamentoResponse.setName(request.getName());
+		contasPagamentoResponse.setPrice(request.getPrice());
+		contasPagamentoResponse.setPriceAdjusted(novoValor);
+		contasPagamentoResponse.setDaysDelay(DiasAtrasados);
+		contasPagamentoResponse.setPaymentDate(request.getPaymentDate());
+		
+		ContasEntity resp = modelMapper.map(contasPagamentoResponse, ContasEntity.class);
+		
+		contasRepository.save(resp);
+		
+		log.info("ContasService.updateContasPagamento - End - ContasPagamentoResponseDTO: {}", contasPagamentoResponse);
+		
+		return contasPagamentoResponse;
 	}
 	
 	private ContasPagamentoResponseDTO converterItemEntityTOItemDTO(ContasEntity contasEntity) {

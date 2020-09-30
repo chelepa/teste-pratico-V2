@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasRequestDTO;
-import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasResponseDTO;
+import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesRequestDTO;
+import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesResponseDTO;
 import br.com.deliver.testepratico.entities.JurosMultasEntity;
 import br.com.deliver.testepratico.exceptions.JurosMultasNotFoundException;
 import br.com.deliver.testepratico.repositories.JurosMultasRepository;
@@ -26,7 +26,7 @@ public class JurosMultasService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	public JurosMultasResponseDTO createJurosMultas(JurosMultasRequestDTO request) {
+	public AdditionAndFinesResponseDTO createJurosMultas(AdditionAndFinesRequestDTO request) {
 		
 		log.info("InterestService.createJurosMultas - Start - request: {}", request);
 
@@ -34,17 +34,17 @@ public class JurosMultasService {
 		
 		repository.save(jurosMultasEntity);
 		
-		JurosMultasResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
+		AdditionAndFinesResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
 		
 		log.info("InterestService.createJurosMultas - End - response: {}", response);
 		 
 		return response;
 	}
 	
-	public List<JurosMultasResponseDTO> getAllJurosMultas() {
+	public List<AdditionAndFinesResponseDTO> getAllJurosMultas() {
 		log.info("InterestService.getAllJurosMultas - Start");
 		
-		List<JurosMultasResponseDTO> response = new ArrayList<>();
+		List<AdditionAndFinesResponseDTO> response = new ArrayList<>();
 		
 		repository.findAll().forEach(itemEntity -> response.add(converterItemEntityTOItemDTO(itemEntity)));
 		
@@ -53,12 +53,12 @@ public class JurosMultasService {
 		return response;
 	}
 	
-	public JurosMultasResponseDTO getJurosMultasId(Integer id) {
+	public AdditionAndFinesResponseDTO getJurosMultasId(Integer id) {
 		log.info("InterestService.getJurosMultasId - Start - ID: {}", id);
 
 		JurosMultasEntity jurosMultasEntity = jurosMultasId(id);
 		
-		JurosMultasResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
+		AdditionAndFinesResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
 		
 		log.info("InterestService.createJurosMultas - End - response: {}", response);
 		
@@ -79,7 +79,7 @@ public class JurosMultasService {
 		return ResponseEntity.noContent().build();
 	}
 	
-	public JurosMultasResponseDTO updateJurosMultas(Integer id, JurosMultasResponseDTO request) {
+	public AdditionAndFinesResponseDTO updateJurosMultas(Integer id, AdditionAndFinesResponseDTO request) {
 		log.info("InterestService.updateJurosMultas - Start - ID: {}, JurosMultasRequestDTO {}", id, request);
 		
 		JurosMultasEntity jurosMultasEntity = jurosMultasId(id);
@@ -88,18 +88,18 @@ public class JurosMultasService {
 		modelMapper.map(request, jurosMultasEntity);
 		repository.save(jurosMultasEntity);
 		
-		JurosMultasResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
+		AdditionAndFinesResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity);
 		
 		log.info("InterestService.updateJurosMultas - End - JurosMultasResponseDTO: {}", response);
 		return response;
 	}
 	
-	public JurosMultasResponseDTO getJurosMultasDaysDelay(String daysDelay) {
+	public AdditionAndFinesResponseDTO getJurosMultasDaysDelay(String daysDelay) {
 		log.info("InterestService.getJurosMultasDaysDelay - Start - ID: {}", daysDelay);
 
 		Optional<JurosMultasEntity> jurosMultasEntity = repository.findByDaysDelay(daysDelay);
 		
-		JurosMultasResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity.get());
+		AdditionAndFinesResponseDTO response = converterItemEntityTOItemDTO(jurosMultasEntity.get());
 		
 		log.info("InterestService.getJurosMultasDaysDelay - End - JurosMultasResponseDTO: {}", response);
 		return response;
@@ -113,9 +113,9 @@ public class JurosMultasService {
 		}
 	}
 	
-	private JurosMultasResponseDTO converterItemEntityTOItemDTO(JurosMultasEntity jurosMultasEntity) {
+	private AdditionAndFinesResponseDTO converterItemEntityTOItemDTO(JurosMultasEntity jurosMultasEntity) {
 		
-		JurosMultasResponseDTO response = modelMapper.map(jurosMultasEntity, JurosMultasResponseDTO.class);
+		AdditionAndFinesResponseDTO response = modelMapper.map(jurosMultasEntity, AdditionAndFinesResponseDTO.class);
 		
 		return response;
 	}

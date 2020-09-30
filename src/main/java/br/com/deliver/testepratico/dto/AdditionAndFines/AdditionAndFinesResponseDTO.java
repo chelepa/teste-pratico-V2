@@ -1,9 +1,9 @@
-package br.com.deliver.testepratico.dto.JurosMultas;
+package br.com.deliver.testepratico.dto.AdditionAndFines;
 
 import lombok.Data;
 
 @Data
-public class JurosMultasResponseDTO {
+public class AdditionAndFinesResponseDTO {
 	
 	private Integer id;
 	private String daysDelay;

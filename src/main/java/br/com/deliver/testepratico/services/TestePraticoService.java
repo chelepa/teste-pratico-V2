@@ -4,31 +4,31 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import br.com.deliver.testepratico.dto.Contas.ContasPagamentoRequestDTO;
-import br.com.deliver.testepratico.dto.Contas.ContasPagamentoResponseDTO;
-import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasRequestDTO;
-import br.com.deliver.testepratico.dto.JurosMultas.JurosMultasResponseDTO;
+import br.com.deliver.testepratico.dto.Account.PaymentAccountRequestDTO;
+import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
+import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesRequestDTO;
+import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesResponseDTO;
 
 public interface TestePraticoService {
 
-	JurosMultasResponseDTO create(JurosMultasRequestDTO jurosMultasRequestDTO);
+	AdditionAndFinesResponseDTO create(AdditionAndFinesRequestDTO additionAndFinesRequestDTO);
 	
-	List<JurosMultasResponseDTO> getAllJurosMultas();
+	List<AdditionAndFinesResponseDTO> getAllJurosMultas();
 	
-	JurosMultasResponseDTO getJurosMultasToID(Integer id);
+	AdditionAndFinesResponseDTO getJurosMultasToID(Integer id);
 	
 	ResponseEntity<Void> deleteJurosMultasToId(Integer id);
 	
-	JurosMultasResponseDTO updateJurosMultas(Integer id, JurosMultasResponseDTO jurosMultasResponseDTO);
+	AdditionAndFinesResponseDTO updateJurosMultas(Integer id, AdditionAndFinesResponseDTO additionAndFinesResponseDTO);
 	
-	ContasPagamentoResponseDTO registerNewPayment(ContasPagamentoRequestDTO contasPagamentoRequestDTO);
+	PaymentAccountResponseDTO registerNewPayment(PaymentAccountRequestDTO paymentAccountRequestDTO);
 	
-	List<ContasPagamentoResponseDTO> getAllPayment();
+	List<PaymentAccountResponseDTO> getAllPayment();
 	
-	ContasPagamentoResponseDTO getPaymentToID(Integer id);
+	PaymentAccountResponseDTO getPaymentToID(Integer id);
 	
 	ResponseEntity<Void> deletePaymentToId(Integer id);
 	
-	ContasPagamentoResponseDTO updateContasPagamento(Integer id, ContasPagamentoRequestDTO contasPagamentoRequestDTO);
+	PaymentAccountResponseDTO updateContasPagamento(Integer id, PaymentAccountRequestDTO paymentAccountRequestDTO);
 	
 }

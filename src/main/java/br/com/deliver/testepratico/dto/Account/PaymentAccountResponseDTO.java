@@ -1,4 +1,4 @@
-package br.com.deliver.testepratico.dto.Contas;
+package br.com.deliver.testepratico.dto.Account;
 
 import java.time.LocalDate;
 
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
-public class ContasPagamentoResponseDTO {
+public class PaymentAccountResponseDTO {
 
 	private Integer id;
 	

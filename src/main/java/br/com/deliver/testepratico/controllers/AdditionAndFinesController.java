@@ -25,7 +25,7 @@ public class AdditionAndFinesController {
     @PostMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<AdditionAndFinesResponseDTO> createAdditionAndFines(@Valid @RequestBody AdditionAndFinesRequestDTO request) {
 		return null;
-////    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
+//    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
     }
     
     @GetMapping(value = "/v1/AdditionAndFines")

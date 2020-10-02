@@ -9,7 +9,7 @@ import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
 
-public interface TestePraticoService {
+public interface PracticeTestService {
 
 	AdditionAndFinesResponseDTO create(AdditionAndFinesRequestDTO additionAndFinesRequestDTO);
 	

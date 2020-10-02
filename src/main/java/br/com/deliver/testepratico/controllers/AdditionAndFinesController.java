@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,31 +27,26 @@ public class AdditionAndFinesController {
 	
     @PostMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<AdditionAndFinesResponseDTO> createAdditionAndFines(@Valid @RequestBody AdditionAndFinesRequestDTO request) {
-		return null;
-//    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
+    	return ResponseEntity.status(HttpStatus.CREATED).body(practiceTestServiceImpl.createAdditionAndFines(request));
     }
     
     @GetMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<List<AdditionAndFinesResponseDTO>> queryAllAdditionAndFines() {
-    	return null;
-//    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getAllJurosMultas());
+    	return ResponseEntity.status(HttpStatus.OK).body(practiceTestServiceImpl.getAllAdditionAndFines());
     }
     
     @GetMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<AdditionAndFinesResponseDTO> queryAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id) {
-    	return null;
-//    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getJurosMultasToID(id));
+    	return ResponseEntity.status(HttpStatus.OK).body(practiceTestServiceImpl.getAdditionAndFinesId(id));
     }
     
     @DeleteMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<Void> deleteAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id) {
-    	return null;
-//		return testePraticoServiceImpl.deleteJurosMultasToId(id);
+		return practiceTestServiceImpl.deleteAdditionAndFinesId(id);
     }
     
     @PutMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<AdditionAndFinesResponseDTO> updateAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id, @Valid @RequestBody AdditionAndFinesResponseDTO request) {
-    	return null;
-//    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.updateJurosMultas(id, request));
+    	return ResponseEntity.status(HttpStatus.OK).body(practiceTestServiceImpl.updateAdditionAndFines(id, request));
     }
 }

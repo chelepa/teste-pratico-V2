@@ -2,6 +2,7 @@ package br.com.deliver.testepratico.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -9,33 +10,37 @@ import br.com.deliver.testepratico.dto.Account.PaymentAccountRequestDTO;
 import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
+import br.com.deliver.testepratico.services.AdditionAndFines.AdditionAndFinesService;
 
 @Service
 public class PracticeTestServiceImpl implements PracticeTestService {
 	
+	@Autowired
+	private AdditionAndFinesService additionAndFinesService;
+	
 	@Override
 	public AdditionAndFinesResponseDTO createAdditionAndFines(AdditionAndFinesRequestDTO additionAndFinesRequestDTO) {
-		return null;
+		return additionAndFinesService.createAdditionAndFines(additionAndFinesRequestDTO);
 	}
 
 	@Override
 	public List<AdditionAndFinesResponseDTO> getAllAdditionAndFines() {
-		return null;
+		return additionAndFinesService.getAllAdditionAndFines();
 	}
 
 	@Override
 	public AdditionAndFinesResponseDTO getAdditionAndFinesId(Integer id) {
-		return null;
+		return additionAndFinesService.getAdditionAndFinesId(id);
 	}
 
 	@Override
 	public ResponseEntity<Void> deleteAdditionAndFinesId(Integer id) {
-		return null;
+		return additionAndFinesService.deleteAdditionAndFinesId(id);
 	}
 
 	@Override
 	public AdditionAndFinesResponseDTO updateAdditionAndFines(Integer id, AdditionAndFinesResponseDTO additionAndFinesResponseDTO) {
-		return null;
+		return additionAndFinesService.updateAdditionAndFines(id, additionAndFinesResponseDTO);
 	}
 
 	@Override

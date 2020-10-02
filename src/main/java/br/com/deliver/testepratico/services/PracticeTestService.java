@@ -11,24 +11,24 @@ import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
 
 public interface PracticeTestService {
 
-	AdditionAndFinesResponseDTO create(AdditionAndFinesRequestDTO additionAndFinesRequestDTO);
+	AdditionAndFinesResponseDTO createAdditionAndFines(AdditionAndFinesRequestDTO additionAndFinesRequestDTO);
 	
-	List<AdditionAndFinesResponseDTO> getAllJurosMultas();
+	List<AdditionAndFinesResponseDTO> getAllAdditionAndFines();
 	
-	AdditionAndFinesResponseDTO getJurosMultasToID(Integer id);
+	AdditionAndFinesResponseDTO getAdditionAndFinesId(Integer id);
 	
-	ResponseEntity<Void> deleteJurosMultasToId(Integer id);
+	ResponseEntity<Void> deleteAdditionAndFinesId(Integer id);
 	
-	AdditionAndFinesResponseDTO updateJurosMultas(Integer id, AdditionAndFinesResponseDTO additionAndFinesResponseDTO);
+	AdditionAndFinesResponseDTO updateAdditionAndFines(Integer id, AdditionAndFinesResponseDTO additionAndFinesResponseDTO);
 	
-	PaymentAccountResponseDTO registerNewPayment(PaymentAccountRequestDTO paymentAccountRequestDTO);
+	PaymentAccountResponseDTO createPaymentAccount(PaymentAccountRequestDTO paymentAccountRequestDTO);
 	
-	List<PaymentAccountResponseDTO> getAllPayment();
+	List<PaymentAccountResponseDTO> getAllPaymentAccount();
 	
-	PaymentAccountResponseDTO getPaymentToID(Integer id);
+	PaymentAccountResponseDTO getPaymentAccountId(Integer id);
 	
-	ResponseEntity<Void> deletePaymentToId(Integer id);
+	ResponseEntity<Void> deletePaymentAccountId(Integer id);
 	
-	PaymentAccountResponseDTO updateContasPagamento(Integer id, PaymentAccountRequestDTO paymentAccountRequestDTO);
+	PaymentAccountResponseDTO updatePaymentAccount(Integer id, PaymentAccountRequestDTO paymentAccountRequestDTO);
 	
 }

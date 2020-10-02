@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
+import br.com.deliver.testepratico.services.PracticeTestServiceImpl;
 
 @RestController
 public class AdditionAndFinesController {
 	
-//	@Autowired
-//	private TestePraticoServiceImpl testePraticoServiceImpl;
+	@Autowired
+	private PracticeTestServiceImpl practiceTestServiceImpl;
 	
     @PostMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<AdditionAndFinesResponseDTO> createAdditionAndFines(@Valid @RequestBody AdditionAndFinesRequestDTO request) {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.deliver.testepratico.dto.Account.PaymentAccountRequestDTO;
 import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
-
-//import br.com.deliver.testepratico.services.TestePraticoServiceImpl;
+import br.com.deliver.testepratico.services.PracticeTestServiceImpl;
 
 @RestController
 public class PaymentAccountController {
 	
-//	@Autowired
-//	private TestePraticoServiceImpl testePraticoServiceImpl;
+	@Autowired
+	private PracticeTestServiceImpl practiceTestServiceImpl;
 	
 	@PostMapping(value = "/v1/Payment")
 	public ResponseEntity<PaymentAccountResponseDTO> createNewPaymentAccount(@RequestBody @Valid PaymentAccountRequestDTO request) {

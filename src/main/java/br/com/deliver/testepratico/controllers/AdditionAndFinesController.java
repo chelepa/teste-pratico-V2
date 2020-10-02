@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesRequestDTO;
-import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesResponseDTO;
+import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
+import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
 
 @RestController
 public class AdditionAndFinesController {
@@ -22,31 +22,31 @@ public class AdditionAndFinesController {
 //	@Autowired
 //	private TestePraticoServiceImpl testePraticoServiceImpl;
 	
-    @PostMapping(value = "/v1/JurosMultas")
+    @PostMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<AdditionAndFinesResponseDTO> createAdditionAndFines(@Valid @RequestBody AdditionAndFinesRequestDTO request) {
 		return null;
 ////    	return ResponseEntity.status(HttpStatus.CREATED).body(testePraticoServiceImpl.create(request));
     }
     
-    @GetMapping(value = "/v1/JurosMultas")
+    @GetMapping(value = "/v1/AdditionAndFines")
     public ResponseEntity<List<AdditionAndFinesResponseDTO>> queryAllAdditionAndFines() {
     	return null;
 //    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getAllJurosMultas());
     }
     
-    @GetMapping(value = "/v1/JurosMultas/{id}")
+    @GetMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<AdditionAndFinesResponseDTO> queryAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id) {
     	return null;
 //    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.getJurosMultasToID(id));
     }
     
-    @DeleteMapping(value = "/v1/JurosMultas/{id}")
+    @DeleteMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<Void> deleteAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id) {
     	return null;
 //		return testePraticoServiceImpl.deleteJurosMultasToId(id);
     }
     
-    @PutMapping(value = "/v1/JurosMultas/{id}")
+    @PutMapping(value = "/v1/AdditionAndFines/{id}")
     public ResponseEntity<AdditionAndFinesResponseDTO> updateAdditionAndFinesId(@PathVariable(value = "id", required = true) Integer id, @Valid @RequestBody AdditionAndFinesResponseDTO request) {
     	return null;
 //    	return ResponseEntity.status(HttpStatus.OK).body(testePraticoServiceImpl.updateJurosMultas(id, request));

@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 
 import br.com.deliver.testepratico.dto.Account.PaymentAccountRequestDTO;
 import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
-import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesRequestDTO;
-import br.com.deliver.testepratico.dto.AdditionAndFines.AdditionAndFinesResponseDTO;
+import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
+import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
 
 public interface TestePraticoService {
 

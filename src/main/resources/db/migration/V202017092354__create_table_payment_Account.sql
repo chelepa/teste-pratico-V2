@@ -1,4 +1,4 @@
-CREATE TABLE contas(
+CREATE TABLE payment_account(
 	ID int NOT NULL,
 	NAME varchar(255) NOT NULL,
     VALUE_ORIGINAL DECIMAL(10,2) NOT NULL,

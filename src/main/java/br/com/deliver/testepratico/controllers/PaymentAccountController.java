@@ -19,7 +19,7 @@ import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
 //import br.com.deliver.testepratico.services.TestePraticoServiceImpl;
 
 @RestController
-public class AccountController {
+public class PaymentAccountController {
 	
 //	@Autowired
 //	private TestePraticoServiceImpl testePraticoServiceImpl;

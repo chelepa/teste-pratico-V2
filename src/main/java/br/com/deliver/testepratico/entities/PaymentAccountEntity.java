@@ -12,8 +12,8 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "contas")
-public class ContasEntity {
+@Table(name = "payment_account")
+public class PaymentAccountEntity {
 
 	@Id
 	@GeneratedValue

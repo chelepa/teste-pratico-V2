@@ -1,4 +1,4 @@
-package br.com.deliver.testepratico.dto.AdditionAndFines;
+package br.com.deliver.testepratico.dto.Addition;
 
 import lombok.Data;
 

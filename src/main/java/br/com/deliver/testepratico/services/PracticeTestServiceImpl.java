@@ -11,12 +11,16 @@ import br.com.deliver.testepratico.dto.Account.PaymentAccountResponseDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesRequestDTO;
 import br.com.deliver.testepratico.dto.Addition.AdditionAndFinesResponseDTO;
 import br.com.deliver.testepratico.services.AdditionAndFines.AdditionAndFinesService;
+import br.com.deliver.testepratico.services.PaymentAccount.PaymentAccountService;
 
 @Service
 public class PracticeTestServiceImpl implements PracticeTestService {
 	
 	@Autowired
 	private AdditionAndFinesService additionAndFinesService;
+	
+	@Autowired
+	private PaymentAccountService paymentAccountService;
 	
 	@Override
 	public AdditionAndFinesResponseDTO createAdditionAndFines(AdditionAndFinesRequestDTO additionAndFinesRequestDTO) {
@@ -45,27 +49,27 @@ public class PracticeTestServiceImpl implements PracticeTestService {
 
 	@Override
 	public PaymentAccountResponseDTO createPaymentAccount(PaymentAccountRequestDTO paymentAccountRequestDTO) {
-		return null;
+		return paymentAccountService.createPayment(paymentAccountRequestDTO);
 	}
 
 	@Override
 	public List<PaymentAccountResponseDTO> getAllPaymentAccount() {
-		return null;
+		return paymentAccountService.getAllPaymentAccount();
 	}
 
 	@Override
 	public PaymentAccountResponseDTO getPaymentAccountId(Integer id) {
-		return null;
+		return paymentAccountService.getPaymentById(id);
 	}
 
 	@Override
 	public ResponseEntity<Void> deletePaymentAccountId(Integer id) {
-		return null;
+		return paymentAccountService.deletePaymentById(id);
 	}
 
 	@Override
 	public PaymentAccountResponseDTO updatePaymentAccount(Integer id, PaymentAccountRequestDTO paymentAccountRequestDTO) {
-		return null;
+		return paymentAccountService.updatePaymentById(id, paymentAccountRequestDTO);
 	}
 
 }

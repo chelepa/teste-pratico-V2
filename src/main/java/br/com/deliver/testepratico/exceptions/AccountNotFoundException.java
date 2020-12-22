@@ -1,10 +1,10 @@
 package br.com.deliver.testepratico.exceptions;
 
-public class ContaNotFoundException extends RuntimeException{
+public class AccountNotFoundException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 
-	public ContaNotFoundException(String msg) {
+	public AccountNotFoundException(String msg) {
 		super(msg);
 	}
 }

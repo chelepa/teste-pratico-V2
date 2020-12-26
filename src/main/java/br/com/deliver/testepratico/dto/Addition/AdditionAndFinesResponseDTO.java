@@ -6,8 +6,8 @@ import lombok.Data;
 public class AdditionAndFinesResponseDTO {
 	
 	private Integer id;
-	private String daysDelay;
-	private String addition;
-	private String interest_per_day;
+	private String daysOfDelay;
+	private Integer addition;
+	private Double additionTheDay;
 	
 }

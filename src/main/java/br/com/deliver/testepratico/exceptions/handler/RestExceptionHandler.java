@@ -10,13 +10,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import br.com.deliver.testepratico.constants.ErrorCodes;
 import br.com.deliver.testepratico.exceptions.AccountNotFoundException;
 import br.com.deliver.testepratico.exceptions.ExceptionResponse;
-import br.com.deliver.testepratico.exceptions.InterestAndFinesNotFoundException;
+import br.com.deliver.testepratico.exceptions.AdditionAndFinesNotFoundException;
 
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 
-	@ExceptionHandler(InterestAndFinesNotFoundException.class)
-	public final ResponseEntity<Object> handleJurosMultasNotFoundException(InterestAndFinesNotFoundException ex, WebRequest request) {
+	@ExceptionHandler(AdditionAndFinesNotFoundException.class)
+	public final ResponseEntity<Object> handleJurosMultasNotFoundException(AdditionAndFinesNotFoundException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.JUROS_MULTAS_NOT_FOUND, ex.getMessage());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponse);
 	}

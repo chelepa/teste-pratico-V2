@@ -19,12 +19,12 @@ public class AdditionAndFinesEntity {
 	private Integer id;
 	
 	@Column(name = "DAYS_OF_DELAY")
-	private Integer daysDelay;
+	private String daysOfDelay;
 	
 	@Column(name = "ADDITION")
 	private Integer addition;
 	
 	@Column(name = "ADDITION_THE_DAY")
-	private Double addition_the_day;
+	private Double additionTheDay;
 	
 }

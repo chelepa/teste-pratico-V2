@@ -5,9 +5,11 @@ import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AdditionAndFinesRequestDTO {
 	
 	@NotNull
@@ -15,11 +17,9 @@ public class AdditionAndFinesRequestDTO {
 	private String daysOfDelay;
 
 	@NotNull
-	@NotEmpty
-	private String addition;
+	private Integer addition;
 
 	@NotNull
-	@NotEmpty
-	private String additionTheDay;
+	private Double additionTheDay;
 	
 }

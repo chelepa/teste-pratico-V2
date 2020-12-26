@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PaymentAccountRequestDTO {
 	
+	private Integer Id;
+	
 	@NotNull
 	@NotEmpty
 	private String name;

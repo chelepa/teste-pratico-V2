@@ -36,7 +36,7 @@ public class PaymentAccountService extends BaseService {
 		
 		repository.save(entity);
 		
-		PaymentAccountResponseDTO response = modelMapper.map(entity, PaymentAccountResponseDTO.class);
+		PaymentAccountResponseDTO response = converterItemEntityTOItemDTO(entity);
 		
 		log.info("PaymentAccountService.createPayment - End - PaymentAccountResponseDTO: [{}]", response);
 		
@@ -71,21 +71,34 @@ public class PaymentAccountService extends BaseService {
 
 	public ResponseEntity<Void> deletePaymentById(Integer id) {
 		
-		log.info("PaymentAccountResponseDTO.deletePaymentById - Start - ID: {}", id);
+		log.info("PaymentAccountResponseDTO.deletePaymentById - Start - ID: [{}]", id);
 		
 		PaymentAccountEntity paymentAccountEntity = paymentById(id);
 		
 		repository.delete(paymentAccountEntity);
 		
-		log.debug("PaymentAccountResponseDTO.deletePaymentById - End - PaymentAccountEntity: {}", paymentAccountEntity);
+		log.debug("PaymentAccountResponseDTO.deletePaymentById - End - PaymentAccountEntity: [{}]", paymentAccountEntity);
 		
-		log.info("PaymentAccountResponseDTO.deletePaymentById - End - id: {}", id);
+		log.info("PaymentAccountResponseDTO.deletePaymentById - End - id: [{}]", id);
 		
 		return ResponseEntity.noContent().build();
 	}
 	
 	public PaymentAccountResponseDTO updatePaymentById(Integer id, PaymentAccountRequestDTO paymentAccountRequestDTO) {
-		return null;
+		
+		paymentById(id);
+		
+		paymentAccountRequestDTO.setId(id);
+		
+		PaymentAccountResponseDTO paymentAccount = populatepaymentAccountResponse(paymentAccountRequestDTO);
+		
+		PaymentAccountEntity entity = modelMapper.map(paymentAccount, PaymentAccountEntity.class);
+		
+		repository.save(entity);
+		
+		PaymentAccountResponseDTO response = converterItemEntityTOItemDTO(entity);
+		
+		return response;
 	}
 	
 	private PaymentAccountResponseDTO converterItemEntityTOItemDTO(PaymentAccountEntity itemEntity) {

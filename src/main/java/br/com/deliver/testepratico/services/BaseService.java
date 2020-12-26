@@ -24,6 +24,11 @@ public class BaseService {
 	public PaymentAccountResponseDTO populatepaymentAccountResponse(PaymentAccountRequestDTO request) {	
 		int days = lateDays(request.getDayOfDue(),request.getDayOfPayment());
 		PaymentAccountResponseDTO paymentAccount = new PaymentAccountResponseDTO();
+		
+		if (request.getId() != null) {
+			paymentAccount.setId(request.getId());
+		}
+		
 		paymentAccount.setName(request.getName());
 		paymentAccount.setPrice(request.getPrice());
 		paymentAccount.setPriceAdjusted(calculateNewPriceAdjuested(request , days));

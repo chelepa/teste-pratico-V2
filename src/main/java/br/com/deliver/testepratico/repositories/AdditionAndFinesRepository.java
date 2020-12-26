@@ -8,5 +8,5 @@ import br.com.deliver.testepratico.entities.AdditionAndFinesEntity;
 @Repository
 public interface AdditionAndFinesRepository extends JpaRepository<AdditionAndFinesEntity, Integer>{
 
-//	Optional<AdditionAndFinesEntity> findByDaysDelay(String daysDelay);
+	AdditionAndFinesEntity findByDaysOfDelay(String daysOfDelay);
 }

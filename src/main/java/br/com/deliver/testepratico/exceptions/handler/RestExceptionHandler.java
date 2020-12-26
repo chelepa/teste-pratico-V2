@@ -8,7 +8,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.deliver.testepratico.constants.ErrorCodes;
-import br.com.deliver.testepratico.exceptions.AccountNotFoundException;
+import br.com.deliver.testepratico.exceptions.PaymentAccountNotFoundException;
 import br.com.deliver.testepratico.exceptions.ExceptionResponse;
 import br.com.deliver.testepratico.exceptions.AdditionAndFinesNotFoundException;
 
@@ -21,8 +21,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponse);
 	}
 	
-	@ExceptionHandler(AccountNotFoundException.class)
-	public final ResponseEntity<Object> handleContaNotFoundException(AccountNotFoundException ex, WebRequest request) {
+	@ExceptionHandler(PaymentAccountNotFoundException.class)
+	public final ResponseEntity<Object> handleContaNotFoundException(PaymentAccountNotFoundException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.CONTA_NOT_FOUND, ex.getMessage());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponse);
 	}

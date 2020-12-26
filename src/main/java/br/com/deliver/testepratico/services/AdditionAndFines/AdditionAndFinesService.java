@@ -81,7 +81,7 @@ public class AdditionAndFinesService {
 		
 		AdditionAndFinesEntity entity = getAdditionAndFinesEntity(id);
 		request.setId(id);
-		
+
 		modelMapper.map(request, entity);
 		repository.save(entity);
 		
@@ -89,6 +89,18 @@ public class AdditionAndFinesService {
 		AdditionAndFinesResponseDTO response = AdditionAndFinesEntityTOAdditionAndFinesResponseDTO(entity);
 		
 		log.info("AdditionAndFinesService.updateAdditionAndFines - End - response: {}", response);
+		
+		return response;
+	}
+	
+	public AdditionAndFinesResponseDTO getAdditionAndFinesByDaysOfDelay(String daysOfDelay) {
+		log.debug("AdditionAndFinesService.getAdditionAndFinesByDaysOfDelay - Start - DaysOfDelay: {}", daysOfDelay);
+		
+		AdditionAndFinesEntity entity = repository.findByDaysOfDelay(daysOfDelay);
+		
+		AdditionAndFinesResponseDTO response = AdditionAndFinesEntityTOAdditionAndFinesResponseDTO(entity);
+		
+		log.debug("AdditionAndFinesService.getAdditionAndFinesByDaysOfDelay - End - AdditionAndFinesResponseDTO: [{}]", response);
 		
 		return response;
 	}
@@ -102,6 +114,4 @@ public class AdditionAndFinesService {
 		AdditionAndFinesResponseDTO response = modelMapper.map(entity, AdditionAndFinesResponseDTO.class);
 		return response;
 	}
-	
-	
 }

@@ -4,8 +4,6 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.DecimalMin;
 
-import org.springframework.format.annotation.NumberFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;

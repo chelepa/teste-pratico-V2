@@ -24,6 +24,8 @@
 
 ### Example
 
+1. AdditionAndFines
+
 *Localhost:8080/v1/AdditionAndFines "POST"*
 ```json
 {

@@ -47,3 +47,31 @@
 *Localhost:8080/v1/AdditionAndFines/{id} "GET"*
 
 *Localhost:8080/v1/AdditionAndFines/{id} "DELETE"*
+
+2. Payment
+
+*Localhost:8080/v1/Payment "POST"*
+```json
+{
+    "name": "Nome Do Payment",
+    "price": "10.5",
+    "dayOfPayment": "2018-11-02",
+    "dayOfDue":  "2018-11-01"
+}
+```
+
+*Localhost:8080/v1/Payment/{id} "PUT"*
+```json
+{
+    "name": "Nome Do Payment",
+    "price": 100.00,
+    "dayOfPayment": "2018-11-02",
+    "dayOfDue": "2018-11-01"
+}
+```
+
+*Localhost:8080/v1/Payment "GET"*
+
+*Localhost:8080/v1/Payment/{id} "GET"*
+
+*Localhost:8080/v1/Payment/{id} "DELETE"*

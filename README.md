@@ -34,3 +34,16 @@
     "additionTheDay": 0.1
 }
 ```
+*Localhost:8080/v1/AdditionAndFines/{id} "PUT"*
+```json
+{
+    "daysOfDelay":"até 3 dias",
+    "addition": 2,
+    "additionTheDay": 0.1
+}
+```
+*Localhost:8080/v1/AdditionAndFines "GET"*
+
+*Localhost:8080/v1/AdditionAndFines/{id} "GET"*
+
+*Localhost:8080/v1/AdditionAndFines/{id} "DELETE"*

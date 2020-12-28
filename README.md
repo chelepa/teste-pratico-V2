@@ -8,9 +8,9 @@ Make sure you have Lombok and Spring tools suite on your computer.
 
 ### Installation
 
-1. Fork and clone this repo
+1. Installation Lombok => https://dicasdejava.com.br/como-configurar-o-lombok-no-eclipse/
 
-2. In your terminal, enter:
+2. Fork and clone this repo
 
 ```
 npm install

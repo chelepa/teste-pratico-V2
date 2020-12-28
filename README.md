@@ -22,3 +22,13 @@
 
 5. Para ter acesso ao Swagger basta acessar: http://localhost:8080/swagger-ui.html#/
 
+### Example
+
+*Localhost:8080/v1/AdditionAndFines "POST"*
+```json
+{
+    "daysOfDelay":"até 3 dias",
+    "addition": 2,
+    "additionTheDay": 0.1
+}
+```

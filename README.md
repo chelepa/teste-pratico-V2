@@ -18,7 +18,12 @@
 4. Configurar o banco de dados criado no passo anterior na aplicação Spring Boot
 
   * Abrir o aquivo o arquivo application.yml
-  * Alterar as variaveis "MYSQL_DB", "MYSQL_USERNAME", "MYSQL_PASSWORD", conforme os dados do banco de dados criado anteriormente
+  * Alterar os valores das variaveis: "MYSQL_DB", "MYSQL_USERNAME", "MYSQL_PASSWORD" e verificar a porta que esta rodando o banco de dados, conforme os dados do banco de dados criado anteriormente
+  * EX: ```json
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/${MYSQL_DB:deliverit}?useTimezone=true&serverTimezone=UTC
+        username: ${MYSQL_USERNAME:root}
+        password: ${MYSQL_PASSWORD:root}
+        ```
 
 5. Para ter acesso ao Swagger basta acessar: http://localhost:8080/swagger-ui.html#/
 

@@ -19,3 +19,6 @@
 
   * Abrir o aquivo o arquivo application.yml
   * Alterar as variaveis "MYSQL_DB", "MYSQL_USERNAME", "MYSQL_PASSWORD", conforme os dados do banco de dados criado anteriormente
+
+5. Para ter acesso ao Swagger basta acessar: http://localhost:8080/swagger-ui.html#/
+

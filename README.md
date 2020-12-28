@@ -22,9 +22,9 @@
   * EX:
     ```json
   {
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/${MYSQL_DB:deliverit}?useTimezone=true&serverTimezone=UTC
-    username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_PASSWORD:root}
+    "url": "jdbc:mysql://${MYSQL_HOST:localhost}:3307/${MYSQL_DB:deliverit}?useTimezone=true&serverTimezone=UTC",
+    "username": "${MYSQL_USERNAME:root}",
+    "password": "${MYSQL_PASSWORD:root}"
   }
   ```
 
